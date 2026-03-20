@@ -1,287 +1,68 @@
-<!DOCTYPE html>
-<html lang="en-GB">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Inbox | RaySource</title>
-    <!-- Lato Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com" rel="stylesheet">
-
-    <style>
-        :root {
-            --bg: #303338;
-            --text: #ffffff;
-            --card: #2b2d31;
-            --border: #404249;
-            --accent: #ffffff;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .header {
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .logo {
-            height: 50px;
-        }
-
-        /* Main Panel */
-        #raysource-panel {
-            background: var(--card);
-            padding: 35px;
-            border-radius: 12px;
-            max-width: 550px;
-            width: 100%;
-            border: 1px solid var(--border);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-        }
-
-        h1 {
-            font-size: 1.6rem;
-            margin-bottom: 25px;
-            text-align: center;
-            font-weight: 700;
-        }
-
-        /* Address Display */
-        .address-box {
-            background: #1e1f22;
-            padding: 15px 20px;
-            border-radius: 6px;
-            margin-bottom: 20px;
-            border: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-            .address-box small {
-                color: #949ba4;
-                display: block;
-                font-size: 10px;
-                text-transform: uppercase;
-                margin-bottom: 4px;
-            }
-
-        #ray-address {
-            font-size: 1.1rem;
-            color: #fff;
-            font-weight: 400;
-            word-break: break-all;
-        }
-
-        .btn-copy {
-            background: #404249;
-            color: #fff;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 11px;
-            font-weight: 700;
-        }
-
-            .btn-copy:hover {
-                background: #4f5159;
-            }
-
-        /* Refresh Button */
-        .btn-refresh {
-            width: 100%;
-            padding: 15px;
-            background: #fff;
-            color: #303338;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-
-            .btn-refresh:hover {
-                background: #dbdee1;
-            }
-
-        /* Inbox Content */
-        #ray-inbox {
-            margin-top: 30px;
-            border-top: 1px solid var(--border);
-            padding-top: 25px;
-            min-height: 120px;
-        }
-
-        .status-msg {
-            text-align: center;
-            color: #949ba4;
-            font-size: 14px;
-            padding: 30px 0;
-        }
-
-        .mail-card {
-            background: #383a40;
-            padding: 20px;
-            border-radius: 6px;
-            border-left: 4px solid #fff;
-            position: relative;
-            margin-bottom: 15px;
-        }
-
-        .report-btn {
-            position: absolute;
-            right: 15px;
-            top: 15px;
-            background: none;
-            border: 1px solid #ff4444;
-            color: #ff4444;
-            font-size: 9px;
-            padding: 3px 6px;
-            cursor: pointer;
-            border-radius: 3px;
-        }
-
-        .mail-meta {
-            font-size: 13px;
-            margin-bottom: 12px;
-            line-height: 1.5;
-            color: #dbdee1;
-        }
-
-            .mail-meta b {
-                color: #fff;
-            }
-
-        pre {
-            background: #1e1f22;
-            padding: 15px;
-            border-radius: 4px;
-            font-size: 12px;
-            white-space: pre-wrap;
-            color: #dbdee1;
-            overflow-x: auto;
-            font-family: 'Courier New', monospace;
-            border: 1px solid #222;
-        }
-
-        .footer-note {
-            margin-top: 30px;
-            font-size: 11px;
-            color: #949ba4;
-            text-align: center;
-            line-height: 1.6;
-        }
-
-            .footer-note a {
-                color: #fff;
-                text-decoration: none;
-                border-bottom: 1px solid #666;
-            }
-    </style>
-</head>
-<body>
-
-    <div class="header">
-        <a href="/"><img src="/icons/RaySourceLogoTextWhite.png" alt="RaySource" class="logo"></a>
+<div id="raysource-panel">
+    <h1>Secure Inbox</h1>
+    
+    <div class="address-box">
+        <div>
+            <small>Active Address</small>
+            <strong id="ray-address">Generating...</strong>
+        </div>
+        <button onclick="copyEmail()" class="btn-copy">COPY</button>
     </div>
 
-    <div id="raysource-panel">
-        <h1>Secure Inbox</h1>
-
-        <div class="address-box">
-            <div>
-                <small>Active Address</small>
-                <strong id="ray-address">Generating...</strong>
-            </div>
-            <button onclick="copyEmail()" class="btn-copy">COPY</button>
-        </div>
-
-        <button id="ray-refresh" class="btn-refresh">Refresh Messages</button>
-
-        <div id="ray-inbox">
-            <div id="status-msg" class="status-msg">Waiting for incoming mail...</div>
-        </div>
-
-        <div class="footer-note">
-            By using this service, you follow our <strong>Temporary Email Guidelines</strong>. <br>
-            If this was a mistake, please contact us at <a href="mailto:support@raysource.co.uk">support@raysource.co.uk</a>
-        </div>
+    <button id="ray-refresh" class="btn-refresh">Refresh Messages</button>
+    
+    <div id="ray-inbox">
+        <div id="status-msg" class="status-msg">Waiting for incoming mail...</div>
     </div>
 
-    <script>// --- CONFIGURATION ---
-        const WORKER_URL = "https://your-worker.workers.dev"; // UPDATE THIS
-        const DOMAIN = "temp.raysource.co.uk";
+    <div id="ban-appeal" style="display:none; margin-top: 25px; font-size: 11px; color: #fa777c; text-align: center; line-height: 1.6;">
+        By using this service, you follow our <strong>Temporary Email Guidelines</strong>. <br>
+        If this was a mistake, please contact us at <a href="mailto:support@raysource.co.uk" style="color: #fff;">support@raysource.co.uk</a>
+    </div>
+</div>
 
-        // Generate and display address
-        const randomID = Math.random().toString(36).substring(2, 8);
-        const myEmail = `ray_${randomID}@${DOMAIN}`;
-        document.getElementById('ray-address').innerText = myEmail;
+<script>
+    const WORKER_URL = "https://plain-disk-aa56.taloninteractive.workers.dev/";
+    const DOMAIN = "temp.raysource.co.uk";
+    
+    const randomID = Math.random().toString(36).substring(2, 8);
+    const myEmail = `ray_${randomID}@${DOMAIN}`;
+    document.getElementById('ray-address').innerText = myEmail;
 
-        function copyEmail() {
-            navigator.clipboard.writeText(myEmail);
-            const btn = document.querySelector('.btn-copy');
-            btn.innerText = "COPIED!";
-            setTimeout(() => btn.innerText = "COPY", 2000);
-        }
+    function copyEmail() {
+        navigator.clipboard.writeText(myEmail);
+        const btn = document.querySelector('.btn-copy');
+        btn.innerText = "COPIED!";
+        setTimeout(() => btn.innerText = "COPY", 2000);
+    }
 
-        async function reportAbuse(id) {
-            try {
-                await fetch(`${WORKER_URL}/report`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ emailId: id, reason: "User flagged for abuse" })
-                });
-                alert("Sender has been reported to RaySource Security.");
-            } catch(e) {
-                console.error("Report failed", e);
+    document.getElementById('ray-refresh').onclick = async () => {
+        const inbox = document.getElementById('ray-inbox');
+        const appeal = document.getElementById('ban-appeal');
+        
+        appeal.style.display = "none";
+        inbox.innerHTML = `<div class="status-msg">Syncing with server...</div>`;
+        
+        try {
+            const res = await fetch(`${WORKER_URL}?email=${encodeURIComponent(myEmail)}`);
+            const data = await res.json();
+            
+            if (data.error) {
+                inbox.innerHTML = `<div class="status-msg">${data.error}</div>`;
+                appeal.style.display = "block";
+            } else {
+                inbox.innerHTML = `
+                    <div class="mail-card">
+                        <div class="mail-meta">
+                            <b>From:</b> ${data.from}<br>
+                            <b>Subject:</b> ${data.subject}
+                        </div>
+                        <pre>${data.body}</pre>
+                    </div>`;
             }
+        } catch (e) {
+            inbox.innerHTML = `<div class="status-msg" style="color:#ff4444;">Could not connect to the security server.</div>`;
+            appeal.style.display = "block";
         }
-
-        document.getElementById('ray-refresh').onclick = async () => {
-            const inbox = document.getElementById('ray-inbox');
-            inbox.innerHTML = `<div class="status-msg">Syncing with server...</div>`;
-
-            try {
-                const res = await fetch(`${WORKER_URL}?email=${encodeURIComponent(myEmail)}`);
-                const data = await res.json();
-
-                if (data.error) {
-                    // Check if the error message is the ban message
-                    const isBanMessage = data.error.includes("contact us at support@raysource.co.uk");
-                    inbox.innerHTML = `<div class="status-msg" style="${isBanMessage ? 'color:#fa777c' : ''}">${data.error}</div>`;
-                } else {
-                    inbox.innerHTML = `
-                        <div class="mail-card">
-                            <button onclick="reportAbuse('${data.id}')" class="report-btn">REPORT SENDER</button>
-                            <div class="mail-meta">
-                                <b>From:</b> ${data.from}<br>
-                                <b>Subject:</b> ${data.subject}
-                            </div>
-                            <pre>${data.body}</pre>
-                        </div>`;
-                }
-            } catch (e) {
-                inbox.innerHTML = `<div class="status-msg" style="color:#ff4444;">Could not connect to the security server.</div>`;
-            }
-        };</script>
-</body>
-</html>
+    };
+</script>
