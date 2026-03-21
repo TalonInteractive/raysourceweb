@@ -8,4 +8,4 @@ This repository exists as a location to host this website. Source code for this 
 
 This repository and its contents are the intellectual property of RaySource UK. Unauthorized use, reproduction, distribution, or modification of any part of this project is strictly prohibited without prior written permission.
 
-For inquiries, please contact: support@raysource.co.uk
+For inquiries, please contact: <a href="mailto:support@raysource.co.uk">support@raysource.co.uk</a>
