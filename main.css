@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Fonts ── */
+  --font-sans: "Lato", sans-serif;
+  --font-serif: "Lato", serif;
+  --font-mono: "Lato", monospace;
+
+  /* ── Primary (dark charcoal) ── */
+  --color-primary-50:  #f2f3f4;
+  --color-primary-100: #d9dbe0;
+  --color-primary-200: #b3b8c2;
+  --color-primary-300: #8d95a3;
+  --color-primary-400: #677285;
+  --color-primary-500: #4e5666;
+  --color-primary-600: #3c4252;
+  --color-primary-700: #2e3340;
+  --color-primary-800: #252830;
+  --color-primary-900: #1a1d24;
+  --color-primary:     #252830;
+
+  /* ── Secondary (mid slate-gray) ── */
+  --color-secondary-50:  #f4f5f7;
+  --color-secondary-100: #dde0e6;
+  --color-secondary-200: #bcc1cd;
+  --color-secondary-300: #9ba3b4;
+  --color-secondary-400: #7a859a;
+  --color-secondary-500: #606b80;
+  --color-secondary-600: #4a5060;
+  --color-secondary-700: #393e4c;
+  --color-secondary-800: #2b2e39;
+  --color-secondary-900: #1d1f27;
+  --color-secondary:     #4a5060;
+
+  /* ── Tracking ── */
+  --tracking-xs: -0.02em;
+}
+
+/* ── Google Font ── */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700;900&display=swap");
+
+/* ── Global ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Fade-up animation ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up          { animation: fadeUp 0.6s ease forwards; }
+.delay-100        { animation-delay: 0.1s; opacity: 0; }
+.delay-200        { animation-delay: 0.2s; opacity: 0; }
+.delay-300        { animation-delay: 0.3s; opacity: 0; }
+.delay-400        { animation-delay: 0.4s; opacity: 0; }
+.delay-500        { animation-delay: 0.5s; opacity: 0; }
+
+/* ── Tool icon hover lift ── */
+.tool-card {
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+.tool-card:hover {
+  transform: translateY(-6px);
+  filter: brightness(1.1);
+}
