@@ -65,3 +65,36 @@ html {
   transform: translateY(-6px);
   filter: brightness(1.1);
 }
+
+.top-banner {
+  background-color: #262831;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  position: relative;
+  z-index: 1000;
+}
+
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.banner-link {
+  color: #DADBDF;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.banner-link:hover {
+  color: #F9FAFF;
+  text-decoration: none;
+}
