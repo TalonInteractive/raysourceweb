@@ -201,3 +201,34 @@ html {
 .footer-label {
   @apply mb-3 font-semibold text-primary-300 text-sm uppercase tracking-wider;
 }
+main section {
+  @apply mb-12;
+}
+
+main h3 {
+  @apply text-2xl font-bold text-white mb-6 mt-8 block;
+}
+
+main h4 {
+  @apply text-lg font-semibold text-white mb-3 mt-6 block;
+}
+
+main p {
+  @apply mb-5 text-primary-100 leading-relaxed;
+}
+
+main ul {
+  @apply mb-6 space-y-3;
+}
+
+main ul li {
+  @apply flex gap-3 text-primary-200;
+}
+
+aside nav a {
+  @apply py-1 block;
+}
+
+.bg-primary-800\/40 {
+  @apply my-10;
+}
