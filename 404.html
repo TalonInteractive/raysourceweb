@@ -16,57 +16,56 @@ Secure your privacy with disposable emails and self-destructing tools that leave
 </head>
 <body class="font-sans antialiased bg-primary-800 text-white">
 
-  <!-- Navbar -->
-  <nav class="sticky top-0 z-50 bg-secondary shadow-lg" id="navbar">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-secondary shadow-lg" id="navbar">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
 
-        <!-- Brand -->
-        <a href="/" class="flex items-center gap-3">
-          <img
-            src="/assets/logo.png"
-            alt="RaySource"
-            width="40" height="40"
-            class="w-10 h-10 object-contain"
-          />
-          <span class="font-bold text-lg text-white tracking-wide">RaySource</span>
-        </a>
+          <!-- Brand -->
+          <a href="/" class="flex items-center gap-3">
+            <img
+              src="/assets/logo.png"
+              alt="RaySource"
+              width="40" height="40"
+              class="w-10 h-10 object-contain"
+            />
+            <span class="font-bold text-lg text-white tracking-wide">RaySource</span>
+          </a>
 
-        <!-- Desktop nav links -->
-        <div class="hidden md:flex items-center gap-8">
-          <a href="/#" class="text-primary-100 hover:text-white transition-colors text-sm font-medium">About Us</a>
-          <a href="#_" class="text-primary-100 hover:text-white transition-colors text-sm font-medium">Contact Us</a>
+          <!-- Desktop nav links -->
+          <div class="hidden md:flex items-center gap-8">
+            <a href="/about-us" class="text-primary-100 hover:text-white transition-colors text-sm font-medium">About Us</a>
+            <a href="/contact-us" class="text-primary-100 hover:text-white transition-colors text-sm font-medium">Contact Us</a>
+          </div>
+
+          <!-- CTA + mobile toggle -->
+          <div class="flex items-center gap-3">
+            <a
+              href="/tools"
+              class="hidden md:inline-flex items-center px-4 py-2 bg-primary-800 text-white text-sm font-semibold rounded-md hover:bg-primary-900 transition-colors"
+            >Privacy Tools</a>
+
+            <!-- Hamburger -->
+            <button
+              id="nav-toggle"
+              class="md:hidden flex flex-col gap-1 p-2"
+              aria-label="Toggle navigation"
+            >
+              <span class="block w-6 h-0.5 bg-primary-100 rounded-full"></span>
+              <span class="block w-6 h-0.5 bg-primary-100 rounded-full"></span>
+              <span class="block w-6 h-0.5 bg-primary-100 rounded-full"></span>
+            </button>
+          </div>
         </div>
 
-        <!-- CTA + mobile toggle -->
-        <div class="flex items-center gap-3">
-          <a
-            href="/tools"
-            class="hidden md:inline-flex items-center px-4 py-2 bg-primary-800 text-white text-sm font-semibold rounded-md hover:bg-primary-900 transition-colors"
-          >Privacy Tools</a>
-
-          <!-- Hamburger -->
-          <button
-            id="nav-toggle"
-            class="md:hidden flex flex-col gap-1 p-2"
-            aria-label="Toggle navigation"
-          >
-            <span class="block w-6 h-0.5 bg-primary-100 rounded-full"></span>
-            <span class="block w-6 h-0.5 bg-primary-100 rounded-full"></span>
-            <span class="block w-6 h-0.5 bg-primary-100 rounded-full"></span>
-          </button>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4 flex-col gap-3">
+          <a href="/about-us" class="text-primary-100 hover:text-white text-sm font-medium py-2">About Us</a>
+          <a href="/contact-us" class="text-primary-100 hover:text-white text-sm font-medium py-2">Contact Us</a>
+          <a href="/tools" class="inline-flex items-center px-4 py-2 bg-primary-800 text-white text-sm font-semibold rounded-md w-fit">Privacy Tools</a>
         </div>
       </div>
-
-      <!-- Mobile menu -->
-      <div id="mobile-menu" class="hidden md:hidden pb-4 flex-col gap-3">
-        <a href="/#" class="text-primary-100 hover:text-white text-sm font-medium py-2">About Us</a>
-        <a href="#_" class="text-primary-100 hover:text-white text-sm font-medium py-2">Contact Us</a>
-        <a href="/tools" class="inline-flex items-center px-4 py-2 bg-primary-800 text-white text-sm font-semibold rounded-md w-fit">Privacy Tools</a>
-      </div>
-    </div>
-  </nav>
-
+    </nav>
 <!-- -- Hero -- -->
 
 <body>
@@ -80,6 +79,30 @@ Secure your privacy with disposable emails and self-destructing tools that leave
         </a>
     </div>
 </body>
+
+<div class="four-oh-four-content-container bg-secondary-600 flex flex-col items-center justify-center min-h-screen text-center">
+  <section class="fade-up">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <h1 class="text-6xl font-bold text-white mb-2">404</h1>
+      <p class="text-primary-300 text-lg mb-10 tracking-xs">Oops. Can't find that page.</p>
+      
+      <div class="flex flex-wrap gap-4 justify-center">
+        
+        <a href="javascript:history.back()"
+           class="inline-flex items-center justify-center px-8 py-3 border border-primary-300 text-white font-semibold rounded-md hover:bg-primary-700 transition-colors">
+          Go Back
+        </a>
+
+        <a href="/"
+           class="inline-flex items-center justify-center px-8 py-3 bg-primary-500 text-white font-semibold rounded-md hover:bg-primary-400 transition-colors">
+          Back to Home
+        </a>
+
+      </div>
+    </div>
+  </section>
+</div>
 
 <!-- Footer -->
 <footer class="bg-primary py-14" id="footer">
