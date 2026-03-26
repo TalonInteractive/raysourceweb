@@ -232,3 +232,65 @@ aside nav a {
 .bg-primary-800\/40 {
   @apply my-10;
 }
+
+@layer base {
+  main section {
+    @apply mb-16 block;
+  }
+
+  main h3 {
+    @apply text-2xl font-bold text-white mb-6 mt-10 block;
+  }
+
+  main h4 {
+    @apply text-lg font-semibold text-white mb-4 mt-8 block;
+  }
+
+  main p {
+    @apply mb-6 text-primary-100 leading-relaxed text-sm;
+  }
+
+  main ul {
+    @apply mb-8 space-y-4 list-none;
+  }
+
+  main ul li {
+    @apply text-primary-200 leading-relaxed;
+  }
+
+  main strong {
+    @apply text-white font-bold;
+  }
+  
+  header[id], section[id] {
+    scroll-margin-top: 100px;
+  }
+  
+  aside nav a {
+    @apply block py-1.5 px-3 -ml-3 rounded-lg transition-all duration-200;
+  }
+
+  aside nav a:hover {
+    @apply bg-primary-700/50 text-white translate-x-1;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-primary-800/40 border border-primary-600/30 backdrop-blur-sm;
+  }
+}
+
+.policy-list li {
+  @apply relative pl-6;
+}
+
+.policy-list li::before {
+  content: "•";
+  @apply absolute left-0 text-primary-400 font-bold;
+}
+
+* {
+  @apply transition-colors duration-200;
+}
+
