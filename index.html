@@ -11,25 +11,28 @@
               <link rel="stylesheet" href="/main.css" />
               <link rel="stylesheet" href="/assets/output.css" />
               <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-              
-    <style>
-        .content-container {
-          max-width: 800px;      /* Limits how wide the text spreads */
-          margin: 0 auto;        /* Centers the container on the page */
-          padding: 20px;         /* Adds space inside the container so text doesn't hit the edges */
-          text-align: left;      /* Ensures text inside stays left-aligned */
-          line-height: 1.6;      /* Optional: Adds comfortable vertical space between lines */
-        }
-    </style>
 </head>
 <body class="font-sans antialiased bg-primary-800 text-white">
 
   <!-- Banner -->
-  <div class="top-banner">
-    This website is still under construction. Please email us
-    <a href="mailto:support@raysource.co.uk" class="banner-link">here</a> for support.
-    <button class="close-btn" onclick="this.parentElement.style.display='none'">&times;</button>
+  <div class="bg-primary-900 text-white text-sm py-2 px-4 relative text-center">
+    <div class="max-w-7xl mx-auto">
+      <span>
+        This website is still under construction. Please email us
+        <a href="mailto:support@raysource.co.uk" class="text-primary-200 underline font-semibold hover:text-white transition-colors">here</a>
+        for support.
+      </span>
+    </div>
+    
+    <button
+      onclick="this.parentElement.style.display='none'"
+      class="absolute right-4 top-1/2 -translate-y-1/2 text-primary-400 hover:text-white cursor-pointer text-lg"
+      aria-label="Close banner"
+    >
+      &times;
+    </button>
   </div>
+
   
   <!-- Navbar -->
   <nav class="sticky top-0 z-50 bg-secondary shadow-lg" id="navbar">
@@ -49,8 +52,8 @@
 
         <!-- Desktop nav links -->
         <div class="hidden md:flex items-center gap-8">
-          <a href="/#" class="text-primary-100 hover:text-white transition-colors text-sm font-medium">About Us</a>
-          <a href="#_" class="text-primary-100 hover:text-white transition-colors text-sm font-medium">Contact Us</a>
+          <a href="/about-us" class="text-primary-100 hover:text-white transition-colors text-sm font-medium">About Us</a>
+          <a href="/contact-us" class="text-primary-100 hover:text-white transition-colors text-sm font-medium">Contact Us</a>
         </div>
 
         <!-- CTA + mobile toggle -->
@@ -75,8 +78,8 @@
 
       <!-- Mobile menu -->
       <div id="mobile-menu" class="hidden md:hidden pb-4 flex-col gap-3">
-        <a href="/#" class="text-primary-100 hover:text-white text-sm font-medium py-2">About Us</a>
-        <a href="#_" class="text-primary-100 hover:text-white text-sm font-medium py-2">Contact Us</a>
+        <a href="/about-us" class="text-primary-100 hover:text-white text-sm font-medium py-2">About Us</a>
+        <a href="/contact-us" class="text-primary-100 hover:text-white text-sm font-medium py-2">Contact Us</a>
         <a href="/tools" class="inline-flex items-center px-4 py-2 bg-primary-800 text-white text-sm font-semibold rounded-md w-fit">Privacy Tools</a>
       </div>
     </div>
@@ -103,6 +106,7 @@
               class="inline-flex items-center justify-center px-6 py-3 bg-secondary text-white font-semibold rounded-md hover:bg-secondary-500 transition-colors"
             >How does it work?</a>
             <button
+                href="/tools/request"
               class="inline-flex items-center justify-center px-6 py-3 border border-primary-500 text-white font-semibold rounded-md hover:bg-primary-700 transition-colors"
             >Request a Tool</button>
           </div>
@@ -132,8 +136,8 @@
           </div>
 
           <p class="text-primary-400 text-sm text-right leading-relaxed mt-2">
-            *BurnerMail tool is available now.<br />
-            TempFiles and SafePaste tools are coming soon.
+            *As of March 2026, BurnerMail tool is completed and being added soon.<br />
+            TempFiles and SafePaste tools are in development.
           </p>
         </div>
 
@@ -170,7 +174,7 @@
             <li>Incoming emails are encrypted even before they are sent to the server, then get decrypted directly within your browser.</li>
             <li>After an hour, the email address and its received emails are deleted.</li>
           </ol>
-          <p class="mt-3 text-sm text-primary-300">By using BurnerMail you are subjected to BurnerMail Guidelines.</p>
+          <p class="mt-3 text-sm text-primary-300">By using BurnerMail you are subjected to <a href="/terms#burnermail">BurnerMail Guidelines</a>.</p>
         </div>
 
         <!-- TempFiles -->
